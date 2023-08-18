@@ -2,10 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const PORT = 5000;
-const path = require('path');  // Add this
+const path = require('path'); 
 
 app.use(cors());
-
 
 app.use(express.static(path.join(__dirname)));
 
