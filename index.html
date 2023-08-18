@@ -23,7 +23,7 @@
     <script>
         function fetchGreeting(language) {
 
-            fetch(`http://localhost:5000/hello?language=${language}`)
+            fetch(`http://54.166.240.168:5000/hello?language=${language}`)
                 .then(response => response.text())
                 .then(greeting => {
                     document.getElementById('greeting').textContent = greeting;
