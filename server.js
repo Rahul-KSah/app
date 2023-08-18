@@ -2,11 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const PORT = 5000;
+const path = require('path');  // Add this
 
 app.use(cors());
 
+
+app.use(express.static(path.join(__dirname)));
+
 app.get('/', (req, res) => {
-    res.send("Welcome to Hello World API - Created By Rahul Sah");
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/hello', (req, res) => {
@@ -24,7 +28,7 @@ app.get('/hello', (req, res) => {
             greeting = "Namastey sansar";
             break;
         default:
-            greeting = "Welcome to Hello World API ";
+            greeting = "Welcome to the HELLO WORLD API created by Rahul Kumar Sah";
     }
     res.send(greeting);
 });
